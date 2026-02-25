@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Example</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="m-6 space-x-4">
+        <input type="text" placeholder="Enter your name" class="peer border border-gray-800px-3 py-2 rounded-md w-100">
+        <p class="text-red-200 mt-2 hidden peer-focus:block">
+            I should be visible when the input is focused
+        </p>
+        <input type="checkbox" class="w-8 h-4 appearance-none border border-gray-300 rounded checked:border-green-500 checked:bg-blue-500">
+        <input type="checkbox" class="w-8 h-4 appearance-none border border-gray-300 rounded checked:border-green-500 checked:bg-blue-500 focus-ring-2 focus:ring-blue-500">
+    </div>
+</body>
+</html>
