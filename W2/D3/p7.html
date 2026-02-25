@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headers and Footers ,equal, height ,hover </title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <article class="p-6 rounded-xl shadow-sm overflow-hidden  flex flex-col rounded-xl hover:shadow-lg transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-lg">
+            <header class="border flex items-center justify-between">
+            <h2>Basic Version</h2>
+        </header>
+            <div class="p-6 space-y-2 flex-1">
+                <p class="text-xl">Rs.1000/-</p>
+            </div>
+            <footer class="border-t px-6 py-4 flex justify-end gap-3">
+            <button class="px-4 py-2 rounded border hover:bg-gray-50 transition">details</button>
+            <button class="px-4 py-2 rounded border hover:bg-gray-50 transition">purchase</button>
+        </footer>
+        </article>
+        <article class="p-6 rounded-xl shadow-sm overflow-hidden  flex flex-col rounded-xl hover:shadow-lg transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-lg">
+            <header class="border flex items-center justify-between">
+            <h2>Intermediate Version</h2>
+            <p class="flex-grow text-sm">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+        </header>
+            <div class="p-6 space-y-2 flex-1">
+                <p class="text-xl">Rs.1000/-</p>
+            </div>
+
+            <footer class="border-t px-6 py-4 flex justify-end gap-3 ">
+            <button class="px-4 py-2 rounded border hover:bg-gray-50 transition">details</button>
+            <button class="px-4 py-2 rounded border hover:bg-gray-50 transition">purchase</button>
+        </footer>
+        </article>
+    </section>
+</body>
+</html>
