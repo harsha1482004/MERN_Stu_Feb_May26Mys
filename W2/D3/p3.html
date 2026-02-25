@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Navigation</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <nav class="border rounded-b-xl p-4 h-16 bg-blue-100 flex items-center justify-between flex-col md:flex-row gap-4 h-full m-2">
+        <div class="flex gap-4 items-center flex-col md:flex-row gap-4">
+            <a href="#" class="font-bold text-lg">gola</a>
+            <ul class="flex gap-6 text-blue-700 flex-col md:flex-row gap-4">
+                <li><a href="#" class="hover:text-red-900 transition">Home</a></li>
+                <li><a href="#" class="hover:text-red-900 transition">Features</a></li>
+                <li><a href="#" class="hover:text-red-900 transition">Contact</a></li>
+            </ul>
+        </div>
+        <div class="flex gap-6 items-center flex-col md:flex-row gap-4">
+            <a href="#" class="hover:text-red-900 transition">Login</a>
+            <button class="bg-black text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Sign Up</button>
+        </div>
+</body>
+</html>
