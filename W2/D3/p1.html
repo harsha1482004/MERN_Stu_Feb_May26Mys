@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind and Navigation Cards</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <section class="border p-6">
+        <h2>Without Flex</h2>
+        <div class="border rounded-lg p-4 space-y-4">
+            <div class="bg-gray-300 rounded p-3">logo</div>
+            <div class="bg-gray-300 rounded p-3">links</div>
+            <div class="bg-gray-300 rounded p-3">contact</div>
+        </div>
+    </section>
+    <section class="border p-6">
+        <h2>With Flex</h2>
+        <div class="border rounded-lg p-4 space-y-4 flex gap-4">
+            <div class="bg-gray-300 rounded p-3">logo</div>
+            <div class="bg-gray-300 rounded p-3">links</div>
+            <div class="bg-gray-300 rounded p-3">contact</div>
+            <div class="bg-gray-300 rounded p-3">
+                <div class="bg-gray-300 rounded p-3">about</div>
+                
+            </div>
+        </div>
+    </section>
+</body>
+</html>
