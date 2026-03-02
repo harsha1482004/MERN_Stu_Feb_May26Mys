@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spanning cols</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+ <main class="max-w-4xl mx-auto p-6 space-y-8">
+    <section class="border rounded p-4 space-y-2">
+        <div class="flex divide-x-2 divide-gray-300 rounded border overflow-hidden">
+            <div class="flex-1 p-4">
+                <div class="text-sm">Student</div>
+                <div class="text-lg font-bold">46</div>
+            </div>
+            <div class="flex-1 p-4">
+                <div class="text-sm">Placed</div>
+                <div class="text-lg font-bold">100%</div>
+            </div>
+            <div class="flex-1 p-4">
+                <div class="text-sm">In progress</div>
+                <div class="text-lg font-bold">0%</div>
+            </div> 
+        </div>
+    </section>
+    <!-- <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <article class="border rounded p-6 ">Tile B</article>
+        <article class="border rounded p-6 ">Tile C</article>
+        <article class="border rounded p-6 ">Tile D</article>
+    </section>
+ </main>
+ <section class="border rounded overflow-hidden">
+    <span class="font-bold">Divide y axis</span>
+    <div class="divide-y-2 divide-red-200 ">
+        <div class="font-bold">Notification</div>
+        <div class="text-sm text-gray-600">Email</div>
+        <button class="px-3 py-2 rounded border hover:bg-red-200"></button>
+    </div>
+ </section> -->
+        <section class="border rounded p-0 ">
+            <p class="font-bold p-2">Divide-y-axis</p>
+            <div class="divide-y-2 divide-red-500 border ">
+                <div class="p-4 flex items-center justify-between">
+                    <div class="font-bold">Notification</div>
+                    <div class="font-sm text-gray-600">Email+SMS</div>
+                    <button class="px-3 py-2 rounded border hover:bg-red-400">Edit</button>
+                </div>
+                <div class="divide-y-2 divide-red-500">
+                    <div class="p-4 flex items-center justify-between">
+                        <div class="font-bold">Privacy Settings</div>
+                        <div class="font-sm text-gray-600 mr-6">Email+SMS</div>
+                        <button class="px-3 py-2 rounded border hover:bg-red-400">Edit</button>
+                    </div>
+            </div>
+        </section>
+</body>
+</html>
