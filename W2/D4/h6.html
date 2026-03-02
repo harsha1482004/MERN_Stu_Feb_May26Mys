@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout design inside Bar</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <main class="max-w-4xl mx-auto p-6 space-y-4">
+        <section class="border rounded overflow-hidden bg-gray-100">
+            <div class="min-h-[360px]">
+                <aside class="w-64 border-r p-4 space-y-2">
+                    <div class="fixed top-4 p-4 space-y-2">
+                        <div class="font-bold">SideBar</div>
+                        <a href="#" class="block text-sm hover:underline">Dashboard</a>
+                        <a href="#" class="block text-sm hover:underline">student</a>
+                        <a href="#" class="block text-sm hover:underline">courses</a>
+                        <a href="#" class="block text-sm hover:underline">reports</a>
+                        <a href="#" class="block text-sm hover:underline">Settings</a>
+                    </div>
+                </aside>
+                <section class="flex-1 p-6 space-y-4">
+                    <h1 class="font-bold text-xl">Main Content</h1>
+                    <p>Welcome to the dashboard!</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="border rounded  p-4">card 1</div>
+                        <div class="border rounded  p-4">card 2</div>
+                        <div class="border rounded  p-4">card 3 <p>Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Voluptatum iste corporis pariatur dignissimos, eaque laudantium doloremque
+                                consequuntur quam debitis similique consequatur voluptas ad ea nobis assumenda! At
+                                itaque aperiam numquam! </p>
+                        </div>
+                        <div class="border rounded  p-4">card 4</div>
+                    </div>
+                </section>
+                <section class="grid lg:grid-cols-2">
+                    <div class="aspect-video rounded flex items-center justify-center">16:9(aspect-video)</div>
+                </section>
+    </main>
+</body>
+</html> 
