@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Variables: hoisting</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <pre id="out">
+
+    </pre>    
+    <button id="runbtn" class="px-3 py-1 rounded-lg m-2 border bg-gray-700 text-white">Run</button>
+ 
+    <script>
+        const out =document.getElementById("out");
+        function print(...args){
+
+            console.log(...args);
+            out.textContent+=args.join("")+"\n";
+        }
+        function clearOut(){
+            out.textContent="";
+        }
+        function run(){
+            clearOut();
+            if(true){
+                var x = "var escapes the if block";
+            }
+            print("x = ",x);
+
+            // let:scope
+            if(true){
+                let y = "let stays in the if-block";
+                print("Y inside block=",y);
+            
+            // print("Y outside block =",y);
+            }
+            print("Before declaration=",testVar);
+            var testVar ="assigned value now";
+            print("After declaration=",testVar);
+
+             try{
+                print("Before testlet declaration",testlet);
+             }
+             catch(e){
+                print("Accessing let before declaration causes somewhere  ",e.name,e.message);
+             }
+             let testlet="declared now";
+              print("After testlet declaration ",testlet);
+        }     
+        document.getElementById("runbtn").addEventListener("click",run);
+    </script>
+</body>
+</html>
