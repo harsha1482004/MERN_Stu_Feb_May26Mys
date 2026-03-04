@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS:Variables</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <button id="runBtn" class="px-3 py-1 border rounded mt-2 md-2 bg-black text-white">
+        Run
+    </button>
+     <pre id="out" class="">
+    </pre>
+    <script>
+        const out=document.getElementById("out");
+        function print(...args){
+            //Console
+            console.log(...args);
+            out.textContent+=args.join("")+"\n";
+        }
+        
+        function run(){
+            clearOut();
+            var a=10;
+        var a=20;
+        print("var a=",a);
+        let b=3;
+        // let b=25;  //Creates a error if uncommented
+        print("value of b=",b);
+
+        // const
+        const pi=3.1413;
+        // pi=2.13;
+        print("const pi=",pi);
+        
+        function clearOut(){
+            out.textContent=""
+        }
+        }
+        document.getElementById("runBtn").addEventListener("click",run);
+    </script>
+</body>
+</html>
