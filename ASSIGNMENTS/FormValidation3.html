@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeedBack Analyzer</title>
+</head>
+<body>
+    <form id="form">
+        <h1>Feedback Form</h1>
+        <input type="text" id="name" placeholder="Enter Name:"><br><br>
+        <input type="email" id="email" placeholder="Enter Name:"><br><br>
+        <select id="type">
+            <option value="">Select FeedBack Type</option>
+            <option value="bug">Bug</option>
+            <option value="suggestion">Suggestion</option>
+            <option value="appreciation">Appreciation</option>
+        </select><br><br>
+        <textarea id="text" placeholder="Enter FeedBack:"></textarea><br><br>
+        <button id="sumbit">Sumbit</button>
+        <button id="deleteBtn">Delete</button>
+        <div id="data"></div>
+    </form>
+    <p id="error"></p>
+    <script src="./FormValidation3.js"></script>
+</body>
+</html>
