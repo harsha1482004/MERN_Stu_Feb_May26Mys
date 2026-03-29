@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded",function(){
-    // Render skills
+    // Render elements
     renderSkills();
     initModal();
     initContactValidation();
     initThemeToggle();
     renderProjects();
+
 });
 
