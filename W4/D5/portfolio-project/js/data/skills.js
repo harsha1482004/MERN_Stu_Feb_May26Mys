@@ -14,7 +14,7 @@ const skillsData = [
   {
     id: 3,
     name: "JavaScript",
-    shortLabel: "J",
+    shortLabel: "JS",
     description: "DOM manipulation, events, validation, Fetch API, and storage."
   },
   {
@@ -22,5 +22,29 @@ const skillsData = [
     name: "MongoDB",
     shortLabel: "M",
     description: "Document-based database design and backend integration."
+  },
+  {
+    id: 5,
+    name: "Java",
+    shortLabel: "J",
+    description: "Strong foundation of basics with OOPs concepts."
+  },
+  {
+    id: 6,
+    name: "C Progarm",
+    shortLabel: "C",
+    description: "Structure Oriented Program, tokens, data types."
+  },
+  {
+    id: 7,
+    name: "SQL",
+    shortLabel: "S",
+    description: "Queries, CRUD operations, table creations."
+  },
+  {
+    id: 8,
+    name: "python",
+    shortLabel: "p",
+    description: "high-level language, oops, built-in libraries."
   }
 ];
