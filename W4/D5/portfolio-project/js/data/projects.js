@@ -42,5 +42,16 @@ const projectsData = [
     status: "Demo",
     liveDemo: "#",
     github: "#"
+  },
+  {
+    id: 5,
+    name: "Music concert ticket booking",
+    category: "python",
+    description:
+      "Remote website to book the concerts organized by musicians.",
+    technologies: ["python", "SQL"],
+    status: "live",
+    liveDemo: "#",
+    github: "#"
   }
 ];
