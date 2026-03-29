@@ -1,4 +1,5 @@
 // js/features/recently-viewed.js
+// Sorts projects via a dropdown
 // Tracks and displays recently viewed projects
 // Uses: click event, array, localStorage, includes()/some(), dynamic render
 
