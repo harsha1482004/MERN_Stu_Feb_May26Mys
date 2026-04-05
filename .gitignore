@@ -30,3 +30,20 @@ Thumbs.db
 
 # Testing
 /coverage/
+
+# Node modules (dependencies)
+node_modules/
+
+# Package lock files (optional, usually NOT ignored)
+package.json
+package-lock.json
+app-config.json
+newFile.txt
+sync-note.txt
+promises-note.txt
+async-note.txt
+Harsha.jpeg
+Harsha1.jpeg
+Final_Report.pdf
+kailasa.webp
+
