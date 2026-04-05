@@ -31,9 +31,6 @@ Thumbs.db
 # Testing
 /coverage/
 
-# Node modules (dependencies)
-node_modules/
-
 # Package lock files (optional, usually NOT ignored)
 package.json
 package-lock.json
