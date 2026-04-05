@@ -40,7 +40,7 @@ app.get("/profile",function(req,res){
 app.get("/admin",requireRoll("admin"),function(req,res){
     res.json({
         success:true,
-        message:"Profile Page",
+        message:"Admin Page",
         user:req.user
     });
 });
