@@ -30,4 +30,4 @@ const movies=[{
 ];
 
 // Exports the movie data so that, other can use it
-module.export=movies;
+module.exports=movies;
