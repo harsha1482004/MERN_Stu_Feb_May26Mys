@@ -32,8 +32,6 @@ Thumbs.db
 /coverage/
 
 # Package lock files (optional, usually NOT ignored)
-package.json
-package-lock.json
 app-config.json
 newFile.txt
 sync-note.txt
