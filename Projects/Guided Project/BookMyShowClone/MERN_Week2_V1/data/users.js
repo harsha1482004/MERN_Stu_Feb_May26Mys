@@ -1,4 +1,4 @@
-// User's details of the application
+// User's details of the application.
 const users = [
     {
         id:1,
