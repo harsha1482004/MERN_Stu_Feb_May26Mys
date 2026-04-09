@@ -1,7 +1,7 @@
 // Fetching thr bookings based on user ID
 const express =require("express");
 const {authMiddleware}=require("../middleware/authMiddleware");
-const bookings=require("../controllers/bookingController");
+const {bookings}=require("../controllers/bookingController");
 
 const router=express.Router();
 
