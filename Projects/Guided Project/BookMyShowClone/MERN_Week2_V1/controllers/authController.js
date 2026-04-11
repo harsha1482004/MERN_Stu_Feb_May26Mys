@@ -26,7 +26,7 @@ function loginUser(req,res,next){
             secure: false,
             maxAge: 60*60*1000
         });
-        res.session.user = {
+        req.session.user = {
             id:user.id,
             name:user.name,
             email:user.email,
@@ -45,6 +45,8 @@ function loginUser(req,res,next){
         });
     } 
     catch(error){
+        console.log(error);
+        
         next(error);
     }
 }
