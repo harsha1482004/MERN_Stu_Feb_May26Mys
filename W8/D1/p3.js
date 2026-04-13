@@ -1,4 +1,4 @@
-// 
+// Applied filters to the Query using comparision operators
 const mongoose=require("mongoose");
 
 async function runFilterDemo(){
