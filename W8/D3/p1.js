@@ -1,8 +1,6 @@
 // Validation and schema constraints
 
 const mongoose=require("mongoose");
-const { match } = require("node:assert");
-const { type } = require("node:os");
 
 const userSchema=new mongoose.Schema({
     name:{
