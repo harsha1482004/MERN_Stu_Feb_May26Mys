@@ -28,11 +28,11 @@ const courses=[
   }
 ];
 
-// function viewCoures(){
-//     console.log("Available Courses:\n")
-//     courses.forEach(course => {
-//     console.log(`Id: ${course.id},  Title: ${course.title}`);  
-//   });
-// }
+function viewCourses() {
+  console.log("\n Available Courses:");
+  courses.forEach(c => {
+    console.log(`ID: ${c.id} - ${c.title}`);
+  });
+}
 
-module.exports = courses;
+module.exports = {courses,viewCourses};
