@@ -1,36 +1,31 @@
-const courses = require("./courses");
+const { courses } = require("./courses");
 
 let enrolledCourses = [];
 
 function enrollCourse(courseId) {
   const course = courses.find(c => c.id === courseId);
 
-  if (!course) {
-    return "Course not found";
+  if (!course) return "Course not found";
+
+  if (enrolledCourses.find(c => c.id === courseId)) {
+    return "Already enrolled";
   }
 
-  const alreadyEnrolled = enrolledCourses.find(c => c.id === courseId);
-  if (alreadyEnrolled) {
-    return "Already enrolled in this course";
-  }
-
-  enrolledCourses.push(course);
-  
-  return `Successfully enrolled in ${course.title}\n`;
-  
-}
-
-function viewEnrolledCourses() {
-  if (enrolledCourses.length === 0) {
-    console.log(" No courses enrolled yet.");
-    return;
-  }
-
-  console.log("Your Enrolled Courses:");
-
-  enrolledCourses.forEach(course => {
-    console.log(`ID: ${course.id} - ${course.title}`);
+  enrolledCourses.push({
+    ...course,
+    completedLessons: [],
+    progress: 0
   });
+
+  return `Enrolled in ${course.title}`;
 }
 
-module.exports = {enrollCourse,viewEnrolledCourses};
+function getEnrolledCourses() {
+  console.log("\nYour enrolled courses are:");
+  return enrolledCourses;
+}
+
+module.exports = {
+  enrollCourse,
+  getEnrolledCourses
+};
