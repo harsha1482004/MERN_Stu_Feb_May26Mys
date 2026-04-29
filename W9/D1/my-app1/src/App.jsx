@@ -120,10 +120,14 @@ import './App.css'
 // }
 
 function App() {
+  const User="Harsha";
+  const marks=60;
   return (
     <div>
-      <h1>React Introduction</h1>
-      <p>React Simplifies UI creation through reusable components</p>
+      {/* {curly brackets}: in JSX means:
+      switch from JSX/HTML like syntax into JS */}
+      <h1>Hello {User}</h1>
+      <p>Updated marks: {marks+10}</p>
     </div>
   );
 }
