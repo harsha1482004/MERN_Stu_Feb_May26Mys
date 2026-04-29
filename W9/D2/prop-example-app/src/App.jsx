@@ -5,7 +5,10 @@ import { useState } from 'react'
 // import { PropDrillingDemo } from '../components/P4'
 // import { SharedStateParent } from '../components/P5'
 // import { CompositionDemo } from '../components/P6'
-import { ObjectsAndArrayProps } from '../components/P7'
+// import { ObjectsAndArrayProps } from '../components/P7'
+// import { PropsImmutabilty } from '../components/P8'
+// import { PropsState } from '../components/P9'
+import { FunctionProps } from '../components/P10'
 
 import './App.css'
 
@@ -19,7 +22,10 @@ function App() {
       {/* <PropDrillingDemo/> */}
       {/* <SharedStateParent/> */}
       {/* <CompositionDemo/> */}
-      <ObjectsAndArrayProps/>
+      {/* <ObjectsAndArrayProps/> */}
+      {/* <PropsImmutabilty/> */}
+      {/* <PropsState/> */}
+      <FunctionProps/>
     </>
   )
 }
