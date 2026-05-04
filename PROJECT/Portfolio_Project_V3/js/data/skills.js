@@ -43,8 +43,8 @@ const skillsData = [
   },
   {
     id: 8,
-    name: "python",
-    shortLabel: "p",
+    name: "Python",
+    shortLabel: "P",
     description: "high-level language, oops, built-in libraries."
   }
 ];

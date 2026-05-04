@@ -1,88 +1,104 @@
-function renderProjects() {
-    const projectsContainer = document.getElementById("projects-container");
+// js/features/project-render.js
+// Reads projectsData from js/data/projects.js and renders cards into #projects-container
 
-    if (!projectsContainer) {
-        console.log("Projects container not found");
+(function () {
+
+    const container = document.getElementById("projects-container");
+    if (!container) return;
+
+    // projectsData is defined in js/data/projects.js (loaded before this script)
+    if (typeof projectsData === "undefined" || projectsData.length === 0) {
+        container.innerHTML = `
+            <div class="col-span-full text-center py-20 text-slate-400">
+                <p class="text-4xl mb-4">📂</p>
+                <p class="text-xl font-bold">No projects yet</p>
+                <p class="text-sm mt-2">Add your projects to <code>js/data/projects.js</code></p>
+            </div>
+        `;
         return;
     }
-    projectsContainer.innerHTML = "";
-    projectsData.forEach(function (project) {
 
-        // to create outer card
-        const card = document.createElement("div");
-        card.className = "p-8 text-center bg-gray-300 rounded-3xl shadow-lg";
+    const statusColors = {
+        "Completed":   { bg: "bg-green-100",  text: "text-green-700"  },
+        "In Progress": { bg: "bg-yellow-100", text: "text-yellow-700" },
+        "Planned":     { bg: "bg-slate-100",  text: "text-slate-500"  },
+    };
 
-        //create icon
-        const iconBox = document.createElement("div");
-        iconBox.className = "w-20 h-10 mx-auto mb-4 bg-gray-500 rounded-2xl flex item-center justify-center";
+    const PREVIEW_LENGTH = 80;
 
-        //create icon text
-        const iconText = document.createElement("span");
-        iconText.className = "text-xl text-white font-bold";
-        iconText.textContent = project.status;
+    function renderAll(list) {
+        container.innerHTML = list.map((project, index) => {
+            const color   = statusColors[project.status] || { bg: "bg-slate-100", text: "text-slate-500" };
+            const full    = project.description || "";
+            const preview = full.length > PREVIEW_LENGTH
+                ? full.slice(0, PREVIEW_LENGTH) + "..."
+                : full;
+            const needsToggle = full.length > PREVIEW_LENGTH;
 
-        //put iconText inside iconBox
-        iconBox.appendChild(iconText);
+            return `
+            <div class="project-card bg-white rounded-xl shadow-md p-6 flex flex-col gap-4
+                        hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
+                 data-title="${project.title || ""}"
+                 data-tags="${(project.tags || []).join(" ")}"
+                 data-description="${full}"
+                 data-category="${project.category || ""}"
+                 data-status="${project.status || ""}">
 
+                <div class="flex items-start justify-between gap-2">
+                    <h3 class="text-xl font-bold text-slate-800">${project.title || "Untitled"}</h3>
+                    <span class="shrink-0 text-xs font-bold px-3 py-1 rounded-full ${color.bg} ${color.text}">
+                        ${project.status || ""}
+                    </span>
+                </div>
 
-        //create project name
-        const projectName = document.createElement("h4");
-        projectName.className = "text-xl font-bold mb-2";
-        projectName.textContent = project.name;
-        projectName.style.color = "blue";
+                <p class="description-text text-slate-500 text-sm leading-relaxed flex-1">${preview}</p>
 
-        //create project category
-        const projectCategory = document.createElement("h3");
-        projectCategory.className = "text-xl font-bold mb-2";
-        projectCategory.textContent = project.category;
+                ${needsToggle ? `
+                <button class="toggle-btn self-start text-blue-500 hover:text-blue-700 text-sm font-bold transition-colors duration-200"
+                        data-index="${index}" data-expanded="false">
+                    View More ▼
+                </button>` : ""}
 
-        //create project description
-        const projectDescription = document.createElement("h5");
-        projectDescription.className = "text-xl mb-2";
-        projectDescription.textContent = project.description;
+                <div class="flex flex-wrap gap-2">
+                    ${(project.tags || []).map(tag => `
+                        <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">${tag}</span>
+                    `).join("")}
+                </div>
 
-        //create project technologies
-        const projectTechnologies = document.createElement("h3");
-        projectTechnologies.className = "text-xl font-bold mb-2";
-        projectTechnologies.textContent = project.technologies;
+                <a href="${project.link || "#"}" target="_blank" rel="noopener"
+                   class="mt-auto text-center bg-red-400 hover:bg-green-500 text-white
+                          font-bold py-2 px-4 rounded transition-all duration-300">
+                    View Project
+                </a>
 
+            </div>`;
+        }).join("");
+    }
 
-        //create icon1
-        const iconBox1 = document.createElement("div");
-        iconBox1.className = "w-20 h-10 mx-auto mb-4 bg-gray-500 rounded-2xl flex item-center justify-center";
+    // Initial render
+    renderAll(projectsData);
 
-        //create icon text1
-        const iconText1 = document.createElement("span");
-        iconText1.className = "text-xl text-white font-bold";
-        iconText1.textContent = project.liveDemo;
+    // Expand / collapse description
+    container.addEventListener("click", (e) => {
+        const btn = e.target.closest(".toggle-btn");
+        if (!btn) return;
 
-        //put iconText inside iconBox
-        iconBox1.appendChild(iconText1);
+        const index    = parseInt(btn.dataset.index);
+        const project  = projectsData[index];
+        const expanded = btn.dataset.expanded === "true";
+        const card     = btn.closest(".project-card");
+        const descEl   = card.querySelector(".description-text");
+        const full     = project.description || "";
 
-        //create icon2
-        const iconBox2 = document.createElement("div");
-        iconBox2.className = "w-20 h-10 mx-auto mb-4 bg-gray-500 rounded-2xl flex item-center justify-center";
-
-        //create icon text2
-        const iconText2 = document.createElement("span");
-        iconText2.className = "text-xl text-white font-bold";
-        iconText2.textContent = project.github;
-
-        //put iconText inside iconBox
-        iconBox2.appendChild(iconText2);
-
-
-        //Append
-        card.appendChild(iconBox);
-        card.appendChild(projectName);
-        card.appendChild(projectCategory);
-        card.appendChild(projectDescription);
-        card.appendChild(projectTechnologies);
-        card.appendChild(iconBox1);
-        card.appendChild(iconBox2);
-
-        //append 
-        projectsContainer.appendChild(card);
+        if (!expanded) {
+            descEl.textContent    = full;
+            btn.textContent       = "View Less ▲";
+            btn.dataset.expanded  = "true";
+        } else {
+            descEl.textContent    = full.slice(0, PREVIEW_LENGTH) + "...";
+            btn.textContent       = "View More ▼";
+            btn.dataset.expanded  = "false";
+        }
     });
-    console.log("Projects rendered successfully");
-}
+
+})();

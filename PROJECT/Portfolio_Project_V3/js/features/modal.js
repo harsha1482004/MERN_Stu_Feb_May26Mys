@@ -1,36 +1,55 @@
-function initModal(){
-    const modal = document.getElementById("contact-modal");
-    const modalContent = document.getElementById("modal-content");
-    const modalTrigger = document.getElementById("modal-trigger");
-    const modalClose = document.getElementById("modal-close");
-    const formCancel = document.getElementById("form-cancel");
+// js/features/modal.js
+// Opens and closes the contact modal with animation
 
-    if(!modal || !modalContent || !modalTrigger || !modalClose || !formCancel){
-        console.log("Modal elements not found");
-        return;
-    }
-    function openModal(){
-          modal.classList.remove("hidden");
+(function () {
 
-          setTimeout(function(){
-            modalContent.classList.remove("scale-95","opacity-0");
-          },10);
-    }
-    function closeModal(){
-        modalContent.classList.add("scale-95","opacity-0");
-          setTimeout(function(){
-            modal.classList.add("hidden")
-          },200);
-    }
-    modalTrigger.addEventListener("click",openModal);
-    modalClose.addEventListener("click",closeModal);
-    formCancel.addEventListener("click",closeModal);
+    const modal       = document.getElementById("contact-modal");
+    const modalContent= document.getElementById("modal-content");
+    const openBtn     = document.getElementById("modal-trigger");
+    const closeBtn    = document.getElementById("modal-close");
+    const cancelBtn   = document.getElementById("form-cancel");
 
-    //close clicking on backdrop
-    modal.addEventListener("click",function(event){
-        if(event.target === modal){
-            closeModal();
-        }
+    if (!modal || !openBtn) return;
+
+    function openModal() {
+        modal.classList.remove("hidden");
+        requestAnimationFrame(() => {
+            modalContent.classList.remove("scale-95", "opacity-0");
+            modalContent.classList.add("scale-100", "opacity-100");
+        });
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+        modalContent.classList.remove("scale-100", "opacity-100");
+        modalContent.classList.add("scale-95", "opacity-0");
+        setTimeout(() => {
+            modal.classList.add("hidden");
+            document.body.style.overflow = "";
+        }, 300);
+    }
+
+    openBtn.addEventListener("click", openModal);
+    if (closeBtn)  closeBtn.addEventListener("click",  closeModal);
+    if (cancelBtn) cancelBtn.addEventListener("click", closeModal);
+
+    // Also close when clicking the backdrop
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
     });
-    console.log("Modal opened successfully");
-}
+
+    // Close on Escape key
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !modal.classList.contains("hidden")) closeModal();
+    });
+
+    // "Let's talk" link in navbar also opens modal
+    const navContact = document.querySelector("nav a[href='#contact']");
+    if (navContact) {
+        navContact.addEventListener("click", (e) => {
+            e.preventDefault();
+            openModal();
+        });
+    }
+
+})();
