@@ -8,7 +8,10 @@ import { useState } from 'react'
 // import { ObjectsAndArrayProps } from '../components/P7'
 // import { PropsImmutabilty } from '../components/P8'
 // import { PropsState } from '../components/P9'
-import { FunctionProps } from '../components/P10'
+// import { FunctionProps } from '../components/P10'
+// import { PropTypesDemo } from '../components/P11'
+import { HOCExample } from '../components/P12'
+
 
 import './App.css'
 
@@ -25,7 +28,9 @@ function App() {
       {/* <ObjectsAndArrayProps/> */}
       {/* <PropsImmutabilty/> */}
       {/* <PropsState/> */}
-      <FunctionProps/>
+      {/* <FunctionProps/> */}
+      {/* <PropTypesDemo/> */}
+      <HOCExample/>
     </>
   )
 }
