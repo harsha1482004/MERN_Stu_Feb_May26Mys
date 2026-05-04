@@ -1,4 +1,4 @@
-// Generating OTP using crypto & hashing it usinh bcrypt
+// Generating OTP using crypto & hashing it using bcrypt
 const crypto=require("crypto");
 const bcrypt=require("bcrypt");
 
