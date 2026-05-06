@@ -10,6 +10,7 @@
     // - language settings
     // - app settings
 import { createContext,useContext,useState } from "react";
+import { useDocumentTitle } from "./P2";
 // Basic steps
 // 1. Create components
 // 2. Wrap components with Provider
@@ -64,6 +65,9 @@ export function UseContextIntro(){
     const toggleTheme=()=>{
         setTheme(theme === 'light' ? 'dark' : 'light');
     };
+
+    useDocumentTitle(`UseContext Example`);
+
     return(
         <section>
             <h2>useContext Hook Example</h2>
