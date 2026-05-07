@@ -6,6 +6,7 @@ import {UseCallbackEvents} from "./components/P5"
 import {EventDelegation} from "./components/P6"
 import {FormsPattern} from "./components/P7"
 import {KeyboardEvent} from "./components/P8"
+import {EventObj} from "./components/P9"
 
 import './App.css'
 
@@ -20,7 +21,8 @@ function App() {
       {/* <UseCallbackEvents/> */}
       {/* <EventDelegation/> */}
       {/* <FormsPattern/> */}
-      <KeyboardEvent/>
+      {/* <KeyboardEvent/> */}
+      <EventObj/>
     </>
   )
 }
