@@ -3,9 +3,9 @@ import { BrowserRouter,Routes,Route } from "react-router-dom";
 import { ProtectedRoute } from "./routes/ProtectedRoute";
 import { MainLayout } from "./layouts/MainLayout";
 import { AboutPage } from "./pages/AboutPage";
-import { DashboardPage } from "./pages/DashboardPage";
-import { HomePage } from "./pages/HomePage";
-import { ProductsPage } from "./pages/ProductsPage";
+import { DashboardPage } from "./pages/Dashboard";
+import { HomePage } from "./pages/HomePages";
+import { ProductsPage } from "./pages/ProductPage";
 import { ProductDetailsPage } from "./pages/ProductDetailsPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 
