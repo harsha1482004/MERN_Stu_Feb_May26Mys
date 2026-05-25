@@ -1,21 +1,21 @@
 const projectsData = [
   {
     id: 1,
-    name: "Movie Time",
-    category: "MERN",
+    name: "Cyclone detection using Satellite Images",
+    category: "Machine Learning",
     description:
-      "Full stack movie ticket booking application with AI-powered smart movie suggestions.",
-    technologies: ["ReactJS", "ExpressJS", "MongoDB"],
+      "Detects intensity of the cyclone based on given satellite image.",
+    technologies: ["Python", "numpy", "Logistic regression"],
     status: "Live",
     liveDemo: "#",
     github: "#"
   },
   {
     id: 2,
-    name: "Gola",
+    name: "BookMyShow clone",
     category: "MERN",
     description:
-      "Cab booking platform that helps users quickly book rides for daily travel.",
+      "It creates a user credentials, login, Display movie and show details.",
     technologies: ["ReactJS", "ExpressJS", "MongoDB"],
     status: "Live",
     liveDemo: "#",
