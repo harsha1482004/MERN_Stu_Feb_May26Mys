@@ -1,29 +1,56 @@
-// WHY THIS FILE?
+// src/routes/AppRoutes.jsx
 
-// AppRoutes.jsx is the routing brain
-// of the entire application.
+/*
+=========================================================
+SPRINT 1 – ROUTING BRAIN
 
-// Responsibilities:
 
-// URL
-// ↓
-// Match Route
-// ↓
-// Load Layout
-// ↓
-// Load Page
-// ↓
-// Render UI
+TOPICS COVERED:
 
-// Without this file:
 
-// ✓ Navigation breaks
-// ✓ Protected routes break
-// ✓ Nested routes break
-// ✓ 404 handling breaks
+✓ React Router v7
+✓ Routes
+✓ Route
+✓ Nested Routes
+✓ Outlet-based Architecture
+✓ React.lazy()
+✓ Suspense
+✓ Protected Routes
+✓ 404 Routing
 
-// =========================================================
-// */
+
+WHY THIS FILE?
+
+
+AppRoutes.jsx is the routing brain
+of the entire application.
+
+
+Responsibilities:
+
+
+URL
+↓
+Match Route
+↓
+Load Layout
+↓
+Load Page
+↓
+Render UI
+
+
+Without this file:
+
+
+✓ Navigation breaks
+✓ Protected routes break
+✓ Nested routes break
+✓ 404 handling breaks
+
+
+=========================================================
+*/
 
 import { lazy, Suspense } from "react";
 
@@ -210,9 +237,7 @@ export default function AppRoutes() {
               <Bookings />
             </ProtectedRoute>
           }
-        >
-          <Route path="/bookings" element={<Bookings />} />
-        </Route>
+        />
 
         {/*
         =================================================
@@ -232,7 +257,7 @@ export default function AppRoutes() {
         <Route
           path="/admin"
           element={
-            <ProtectedRoute requiredRole="admin">
+            <ProtectedRoute roles={["admin"]}>
               <AdminLayout />
             </ProtectedRoute>
           }
@@ -273,3 +298,123 @@ export default function AppRoutes() {
     </Suspense>
   );
 }
+
+/*
+=========================================================
+ROUTING FLOW
+
+
+Browser URL
+↓
+BrowserRouter
+↓
+App.jsx
+↓
+AppRoutes.jsx
+↓
+Find Matching Route
+↓
+Load Layout
+↓
+Load Page
+↓
+Render UI
+
+
+=========================================================
+
+
+PROTECTED ROUTE FLOW
+
+
+User Visits:
+
+
+/bookings
+↓
+ProtectedRoute
+↓
+Allowed?
+↓
+Yes → Bookings
+
+
+No → Redirect
+
+
+=========================================================
+
+
+ADMIN ROUTE FLOW
+
+
+/admin/movies
+↓
+ProtectedRoute
+↓
+Role Check
+↓
+AdminLayout
+↓
+MovieManagement
+
+
+=========================================================
+
+
+KEY TAKEAWAYS
+
+
+1. AppRoutes.jsx is the routing brain.
+
+
+2. Layouts reduce duplication.
+
+
+3. Suspense enables route-level
+   lazy loading.
+
+
+4. ProtectedRoute centralizes
+   authorization logic.
+
+
+5. Nested routing mirrors real
+   application structure.
+
+
+=========================================================
+
+
+VERIFICATION
+
+
+✓ React Router v7 compatible
+
+
+✓ Lazy loading configured
+
+
+✓ Suspense fallback configured
+
+
+✓ Public routes working
+
+
+✓ Protected routes prepared
+
+
+✓ Admin nesting configured
+
+
+✓ Index routes configured
+
+
+✓ 404 handling configured
+
+
+✓ Production-oriented structure
+
+
+=========================================================
+*/
